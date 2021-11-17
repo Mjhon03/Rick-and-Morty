@@ -5,6 +5,7 @@ const oneCharater = document.getElementById('one');
 const allCharater = document.getElementById('all');
 const select_charater = document.getElementById('select');
 const allCard = document.getElementById('allCards');
+const characterTitle = document.getElementById('character');
 
 select_charater.addEventListener('change',getcard)
 
@@ -32,6 +33,7 @@ function getcard() {
         data.results.map(element => {
             if(select_charater.value == element.name){
                 allCard.innerHTML = '';
+                characterTitle.textContent='Rick and Morty Character';
                 const card = document.createElement('div')
                 const cardName = document.createElement('div')
                 card.classList.add('cards');
@@ -51,6 +53,7 @@ function getcard() {
             if (select_charater.value == allCharater.value) {
                 allCard.innerHTML = '';
                 data.results.map(element =>{ 
+                    characterTitle.textContent='Rick and Morty Characters';
                     const card = document.createElement('div')
                     const cardName = document.createElement('div')
                     card.classList.add('cards');
